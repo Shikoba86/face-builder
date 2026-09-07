@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#101113">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Face Builder V0.2</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"}}</script>
+</head>
+<body>
+<main>
+<section id="view"><canvas id="c"></canvas><div class="badge">FACE BUILDER V0.2</div><div class="hint">drag to rotate · pinch to zoom</div></section>
+<aside>
+<header><div><h1>Face Builder</h1><p class="sub">Manual identity prototype · no generative AI</p></div><button id="home" class="icon">Front</button></header>
+<nav id="tabs"></nav>
+<div id="presets"></div>
+<div id="controls"></div>
+<div class="actions"><button id="undo">Undo</button><button id="random">Random</button><button id="reset">Reset</button><button id="save" class="primary">Save DNA</button></div>
+<details><summary>Character DNA</summary><pre id="dna"></pre></details>
+</aside>
+</main>
+<script type="module" src="app.js"></script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}</script>
+</body></html>
