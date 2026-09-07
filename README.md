@@ -1,27 +1,15 @@
-# Face Builder V0.2
+# Face Builder V1 Alpha
 
-Manual, deterministic face-builder prototype. No generative AI creates the identity.
+Deterministic anatomical face-builder experiment using the MakeHuman/MPFB CC0 base mesh and CC0 target data at runtime.
 
-## Current build
-- iPhone/desktop responsive UI
-- touch rotate + pinch zoom
-- six facial control groups
-- anatomical-style presets
-- 25+ manual parameters
-- subtle left/right asymmetry controls
-- Undo / Random / Reset / Front view
-- Character DNA JSON export
-- PWA manifest + basic service worker
+## What changed from V0.2
+- Replaces the primitive/cartoon head with the actual MakeHuman base anatomy.
+- Applies MakeHuman `.target.gz` vertex deltas directly in the browser.
+- First curated controls: head, forehead, nose and chin.
+- Character DNA remains numeric/deterministic; no generative AI creates identity.
+- Touch orbit/zoom and mobile UI remain.
 
-## Run locally
-Serve the folder through HTTP:
+## Alpha note
+Assets are fetched at runtime from the official MakeHumanCommunity MPFB2 GitHub repository. Some target paths may change upstream; unavailable targets fail gracefully in the browser console.
 
-    python3 -m http.server 8080
-
-Open http://localhost:8080
-
-## iPhone
-Deploy the folder to any static HTTPS host, open the URL in Safari, then use Share > Add to Home Screen.
-
-## Important limitation
-The current face is a procedural prototype assembled from geometry. It proves UI, interaction and deterministic DNA, but it is not the final anatomical asset. The production step is to replace it with a GLB head containing authored morph targets and map these same controls to those morph targets.
+MakeHuman/MPFB core graphical assets used here are CC0. The base.obj itself contains an explicit CC0 notice.
