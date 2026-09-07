@@ -1,15 +1,9 @@
-# Face Builder V1.2 — Real Anatomy
+# Face Builder V1.3 Face Lab
 
-This build includes the MakeHuman hm08 base mesh physically in `assets/base.obj`.
-The mesh is the uploaded MakeHuman asset and declares CC0 in its own header.
+- Local MakeHuman hm08 base mesh included in `assets/base.obj`
+- Renders only the hm08 human surface vertex range (0-13379), excluding helper geometry
+- 47 deterministic face controls across Head, Forehead, Brows, Eyes, Nose, Cheeks, Mouth, Chin and Ears
+- Morph deltas load from official MPFB CC0 targets
+- Character DNA remains numeric/deterministic
 
-## What changed
-- Real local hm08 mesh: no remote dependency for the base character.
-- Only the `body` face group is rendered, so helper/joint geometry is excluded.
-- Head/nose/chin morph targets are fetched from the official MPFB repository for this alpha.
-- Deterministic Character DNA; no generative AI creates identity.
-- Old service-worker caching is not used by this build.
-
-## Deploy
-Replace the files in the root of the GitHub Pages repository, including the entire `assets` folder.
-When loaded correctly the badge reads `V1.2 · LOCAL HM08 · 19,158 VERTICES`.
+Upload the entire folder contents to the GitHub Pages repository root, including `assets/base.obj`.
