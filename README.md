@@ -1,15 +1,15 @@
-# Face Builder V1 Alpha
+# Face Builder V1.2 — Real Anatomy
 
-Deterministic anatomical face-builder experiment using the MakeHuman/MPFB CC0 base mesh and CC0 target data at runtime.
+This build includes the MakeHuman hm08 base mesh physically in `assets/base.obj`.
+The mesh is the uploaded MakeHuman asset and declares CC0 in its own header.
 
-## What changed from V0.2
-- Replaces the primitive/cartoon head with the actual MakeHuman base anatomy.
-- Applies MakeHuman `.target.gz` vertex deltas directly in the browser.
-- First curated controls: head, forehead, nose and chin.
-- Character DNA remains numeric/deterministic; no generative AI creates identity.
-- Touch orbit/zoom and mobile UI remain.
+## What changed
+- Real local hm08 mesh: no remote dependency for the base character.
+- Only the `body` face group is rendered, so helper/joint geometry is excluded.
+- Head/nose/chin morph targets are fetched from the official MPFB repository for this alpha.
+- Deterministic Character DNA; no generative AI creates identity.
+- Old service-worker caching is not used by this build.
 
-## Alpha note
-Assets are fetched at runtime from the official MakeHumanCommunity MPFB2 GitHub repository. Some target paths may change upstream; unavailable targets fail gracefully in the browser console.
-
-MakeHuman/MPFB core graphical assets used here are CC0. The base.obj itself contains an explicit CC0 notice.
+## Deploy
+Replace the files in the root of the GitHub Pages repository, including the entire `assets` folder.
+When loaded correctly the badge reads `V1.2 · LOCAL HM08 · 19,158 VERTICES`.
